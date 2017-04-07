@@ -4,7 +4,7 @@ services:
         image: registry.aliyuncs.com/syncxplus/nginx:1.11.10
         restart: always
         ports:
-            - "80:80"
+            - '80:80'
         volumes:
             - ./nginx:/etc/nginx/conf.d
         links:
@@ -25,15 +25,15 @@ services:
             - ./aries/logs:/logs/aries
             - ./cancer/runtime/logs:/logs/cancer
             - ./submarine/runtime/logs:/logs/submarine
-        command: ["-f", "/conf/logstash.conf"]
+        command: ['-f', '/conf/logstash.conf']
     rabbitmq:
         image: rabbitmq:3.6.1
         restart: always
         environment:
-            - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
-            - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+            RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+            RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
         ports:
-            - "5672:5672"
+            - '5672:5672'
     aries:
         image: registry.aliyuncs.com/syncxplus/gradle:2.14.1
         restart: always
