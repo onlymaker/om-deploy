@@ -15,8 +15,8 @@ services:
             - wecenter:wecenter
         depends_on:
             - cancer
-            - declare:declare
-            - gemini:gemini
+            - declare
+            - gemini
             - submarine
             - wecenter
     aries:
