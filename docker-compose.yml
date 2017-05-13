@@ -17,15 +17,6 @@ services:
             - cancer
             - submarine
             - wecenter
-    logstash:
-        image: logstash:2.2.2-1
-        restart: always
-        volumes:
-            - ./logstash:/conf
-            - ./aries/logs:/logs/aries
-            - ./cancer/runtime/logs:/logs/cancer
-            - ./submarine/runtime/logs:/logs/submarine
-        command: ['-f', '/conf/logstash.conf']
     aries:
         image: registry.aliyuncs.com/syncxplus/gradle:2.14.1
         restart: always
