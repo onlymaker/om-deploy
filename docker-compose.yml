@@ -1,20 +1,22 @@
 version: '2'
 services:
     nginx:
-        image: registry.aliyuncs.com/syncxplus/nginx:1.11.10
+        image: registry.aliyuncs.com/syncxplus/nginx:1.11.13
         restart: always
         ports:
             - '80:80'
         volumes:
             - ./nginx:/etc/nginx/conf.d
         links:
-            - aries:aries
             - cancer:cancer
+            - declare:declare
+            - gemini:gemini
             - submarine:submarine
             - wecenter:wecenter
         depends_on:
-            - aries
             - cancer
+            - declare:declare
+            - gemini:gemini
             - submarine
             - wecenter
     aries:
@@ -26,12 +28,22 @@ services:
         entrypoint: /bin/bash
         command: run.sh
     cancer:
-        image: registry.aliyuncs.com/syncxplus/php:7.1.3
+        image: registry.aliyuncs.com/syncxplus/php:7.1.4
         restart: always
         volumes:
             - ./cancer:/var/www/html
+    declare:
+        image: registry.aliyuncs.com/syncxplus/php:7.1.4
+        restart: always
+        volumes:
+            - ./declare:/var/www
+    gemini:
+        image: registry.aliyuncs.com/syncxplus/php:7.1.4
+        restart: always
+        volumes:
+            - ./gemini:/var/www
     submarine:
-        image: registry.aliyuncs.com/syncxplus/php:7.1.3
+        image: registry.aliyuncs.com/syncxplus/php:7.1.4
         restart: always
         volumes:
             - ./submarine:/var/www/html

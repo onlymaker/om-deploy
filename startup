@@ -2,6 +2,8 @@
 workdir=$(cd `dirname ${0}`; pwd)
 docker-compose up -d
 docker exec -it `basename ${workdir}`_cancer_1 chown -R www-data:www-data /var/www/html
+docker exec -it `basename ${workdir}`_declare_1 chown -R www-data:www-data /var/www
+docker exec -it `basename ${workdir}`_gemini_1 chown -R www-data:www-data /var/www
 docker exec -it `basename ${workdir}`_submarine_1 chown -R www-data:www-data /var/www/html
 docker exec -it `basename ${workdir}`_wecenter_1 chown -R www-data:www-data /var/www/html
 
