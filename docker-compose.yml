@@ -12,11 +12,13 @@ services:
             - declare:declare
             - gemini:gemini
             - submarine:submarine
+            - wecenter:wecenter
         depends_on:
             - cancer
             - declare
             - gemini
             - submarine
+            - wecenter
     aries:
         image: registry.aliyuncs.com/syncxplus/gradle:2.14.1
         restart: always
@@ -45,3 +47,9 @@ services:
         restart: always
         volumes:
             - ./submarine:/var/www/html
+    wecenter:
+        image: registry.aliyuncs.com/syncxplus/php:5.6.30
+        restart: always
+        volumes:
+            - ./wecenter:/var/www/html
+
