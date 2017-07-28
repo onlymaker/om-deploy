@@ -28,27 +28,27 @@ services:
         entrypoint: /bin/bash
         command: run.sh
     cancer:
-        image: registry.aliyuncs.com/syncxplus/php:7.1.4
+        image: registry.aliyuncs.com/syncxplus/php:7.1.7
         restart: always
         volumes:
             - ./cancer:/var/www/html
     declare:
-        image: registry.aliyuncs.com/syncxplus/php:7.1.4
+        image: registry.aliyuncs.com/syncxplus/php:7.1.7
         restart: always
         volumes:
             - ./declare:/var/www
     gemini:
-        image: registry.aliyuncs.com/syncxplus/php:7.1.4
+        image: registry.aliyuncs.com/syncxplus/php:7.1.7
         restart: always
         volumes:
             - ./gemini:/var/www
     submarine:
-        image: registry.aliyuncs.com/syncxplus/php:7.1.4
+        image: registry.aliyuncs.com/syncxplus/php:7.1.7
         restart: always
         volumes:
             - ./submarine:/var/www/html
     wecenter:
-        image: registry.aliyuncs.com/syncxplus/php:5.6.30
+        image: registry.aliyuncs.com/syncxplus/php:5.6.31
         restart: always
         volumes:
             - ./wecenter:/var/www/html
