@@ -54,4 +54,13 @@ services:
         restart: always
         volumes:
             - ./wecenter:/var/www/html
+    logstash:
+        image: logstash:2.2.4-1
+        restart: always
+        volumes:
+            - ./logstash:/conf
+            - ./aries/logs:/logs/aries
+            - ./cancer/runtime/logs:/logs/cancer
+            - ./submarine/runtime/logs:/logs/submarine
+        command: ['-f', '/conf/logstash.conf']
 
