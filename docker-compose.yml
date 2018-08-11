@@ -22,6 +22,8 @@ services:
     aries:
         image: registry.aliyuncs.com/syncxplus/gradle:2.14.1
         restart: always
+        ports:
+            - '8080:8080'
         volumes:
             - ./gradle/caches:/root/.gradle/caches
             - ./aries:/usr/bin/app
